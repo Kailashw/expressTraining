@@ -2,12 +2,10 @@
 const express = require('express')
 const app = express()
 
-const customerRoutes = app.get('/customers', (req, res) => {
+export const customerRoutes = app.get('/customers', (req, res) => {
     //auth first
-    if(req.header.token){
-
+    if(!req.headers.token){
+        res.status(401).send('customer not found')
     }
-    res.send('user not found',401);
+    res.status(200).send('customer found')
 })
-
-exports.customerRoutes = customerRoutes

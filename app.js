@@ -1,6 +1,6 @@
 const express = require('express')
-const { customerRoutes } = require('./routes/customerRoutes')
-const { userRoutes } = require('./routes/userRoutes')
+import { userRoutes } from "./routes/userRoutes";
+import { customerRoutes } from "./routes/customerRoutes";
 const app = express()
 const port = 3000
 
