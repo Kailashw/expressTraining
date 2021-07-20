@@ -1,8 +1,15 @@
+export const userRoutes = (app) => {
+    app.get('/users', (req, res, next) => {
+        //auth first
+        if (!req.headers.token) {
+            res.status(401).send('User not found')
+        }
+        res.status(200).send('User found')
+        next()
+    })
 
-const express = require('express')
-const app = express()
-
-export const userRoutes = app.get('/users', (req, res) => {
-    // will not authenticate
-    res.send('in user route');
-})
+    app.get('/users/:name', (req, res, next) => {
+        res.status(200).send(`Welcome ${req.params.name}!!`)
+        next()
+    })
+}
