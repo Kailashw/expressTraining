@@ -1,18 +1,22 @@
+import { app } from './server';
 import { userRoutes } from "./routes/userRoutes";
-import { customerRoutes } from "./routes/customerRoutes";
-import { app } from "./server";
+import { productRoutes } from "./routes/productRoutes";
 const port = 3000
 
-app.get('/', (req, res) => {
+app.get('/', (req,res) => {
     res.send('you are in home page now');
 })
 
-customerRoutes(app);
+productRoutes(app);
 userRoutes(app);
 
 app.use(userRoutes);
-app.use(customerRoutes);
+app.use(productRoutes);
+
+app.get('*',(request,response)=>{
+    response.send(`${request.params['0'].split("/")[1].toUpperCase()} route Not found !!`)
+})
 
 app.listen(port, () => {
-  console.log(`===========================app listening at http://localhost:${port}===============`)
+    console.log(`My app is running at http://localhost:${port}`)
 })
