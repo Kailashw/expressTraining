@@ -12,8 +12,7 @@ export const productRoutes = (app ) => {
     })
 
     app.post('/products', (req,res) => {
-        data.push(req.body);
-        res.send(`Product post method`);
+        res.send(req.body);
     })
 
     app.put('/products/:id', (req,res) => {

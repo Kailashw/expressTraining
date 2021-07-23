@@ -1,0 +1,20 @@
+[
+    {
+        "id" :1,
+        "username" :"shreya",
+        "age" : 24,
+        "city" : "Gujurat"
+    },
+    {
+        "id" :2,
+        "username" :"Hardik",
+        "age" : 44,
+        "city" : "delhi"
+    },
+    {
+        "id" :3,
+        "username" :"priyan",
+        "age" : 18,
+        "city" : "kolkata"
+    }
+]

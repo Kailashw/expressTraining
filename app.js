@@ -1,10 +1,12 @@
 import { app } from './server';
 import { userRoutes } from "./routes/userRoutes";
 import { productRoutes } from "./routes/productRoutes";
-const port = 3000
+import path from "path";
+
+const port = 8080
 
 app.get('/', (req,res) => {
-    res.send('you are in home page now');
+    res.sendFile(path.join(__dirname, 'static/index.html'));
 })
 
 productRoutes(app);
